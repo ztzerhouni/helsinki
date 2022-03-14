@@ -1,0 +1,38 @@
+.landing {
+    background-color:lavenderblush;
+    padding: 50px;
+    border: 20px solid salmon;
+    margin: 20px;
+    text-align: center;
+
+}
+
+.foot {
+    vertical-align: bottom;
+    text-align: right;
+    margin: 20px
+}
+
+.buttoncol {
+    float: left;
+    width: 33.33%;
+}
+
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.stats {
+    background-color:lavenderblush;
+    padding: 50px;
+    border: 20px solid salmon;
+    margin: 20px;
+    text-align: center;
+}
+
+.stattable {
+    text-align: left;
+    margin: auto;
+}
