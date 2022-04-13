@@ -9,7 +9,7 @@ const FullCountry = ({country}) => {
     
     const weatherHook = () => {
         axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${country.capitalInfo.latlng[0]}&lon=${country.capitalInfo.latlng[1]}&appid=5ec4dbcf02154794007a59068e5e95cf&units=metric`).then(response => {
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${country.capitalInfo.latlng[0]}&lon=${country.capitalInfo.latlng[1]}&appid=${REACT_APP_API_KEY}&units=metric`).then(response => {
             setCapitalWeather(response.data);
             setLoading(false);
         })
