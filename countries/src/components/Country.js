@@ -1,11 +1,13 @@
 const Country = ({country, handleShowCountry}) => {
+  //console.log(country.name.common)
   
-  const testClick = () => {
-    console.log(country.name.common)
-  }
-
   return(
-        <p>{country.name.common} <button onClick={testClick}>show</button></p>
+        <p>{country.name.common} 
+            <button onClick={handleShowCountry}
+                    value={country.name.common}>
+              show
+            </button>
+        </p>
       )
 }
 

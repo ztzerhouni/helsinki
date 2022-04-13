@@ -3,10 +3,13 @@ import FullCountry from "./FullCountry"
 import {useState} from 'react'
 
 const Countries = ({countries, searchString}) => {
-    const [showCountry, setShowCountry] = useState(false)  
+    const [showCountry, setShowCountry] = useState(false)
+    const [singleCountry, setSingleCountry] = useState('')
 
-    const handleShowCountry = () => {
+    const handleShowCountry = (event) => {
+      //console.log(selectedCountry)
       setShowCountry(!showCountry)
+      setSingleCountry(event.target.value)
     }
 
     const searchRegex = RegExp(searchString,'i')
@@ -33,14 +36,20 @@ const Countries = ({countries, searchString}) => {
       )
     }
     if(filteredCountries.length > 10) {
+
       return (
         <p>Too many matches. Please specify another filter.</p>
       )
     }
     else {
       if (showCountry === true) {
+  
         return (
-          <p>Forget About It</p>
+          <>
+            {countries.filter(country => country.name.common.match(RegExp(singleCountry,'i'))).map(country => <FullCountry key={country.name.common} country={country}/>)}
+            
+            <button onClick={handleShowCountry}>Hide</button>
+          </>
         )
       }
       return (
